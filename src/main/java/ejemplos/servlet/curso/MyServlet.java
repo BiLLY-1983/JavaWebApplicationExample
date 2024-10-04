@@ -14,6 +14,10 @@ public class MyServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
+		request.getRequestDispatcher("/views/miView.jsp").forward(request, response);
+
+		/*
+
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
@@ -25,6 +29,8 @@ public class MyServlet extends HttpServlet {
 		out.println("<p>Este es un ejemplo en el curso de Java para generar HTML desde un Servlet.</p>");
 		out.println("<p><a href=\"/myServlet2\">Vamos al otro Servlet</a></p>");
 		out.println("</body></html>");
+
+		 */
 	}
 
 }

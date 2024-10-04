@@ -14,6 +14,14 @@ public class MyServlet2 extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
+		//String name = request.getParameter("nombreForm");
+
+		request.setAttribute("nombreForm", request.getParameter("nombreForm"));
+
+		request.getRequestDispatcher("/views/welcome.jsp").forward(request, response);
+
+		/*
+
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
@@ -22,6 +30,8 @@ public class MyServlet2 extends HttpServlet {
 		out.println("<head><title>Ejemplo HTML desde Servlet</title></head>");
 		out.println("<body>");
 		out.println("<h1>Bienvenido!!</h1>");
+
+		 */
 	}
 
 }
