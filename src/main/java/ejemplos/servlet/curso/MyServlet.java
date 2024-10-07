@@ -14,23 +14,26 @@ public class MyServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		request.getRequestDispatcher("/views/miView.jsp").forward(request, response);
+		// request.getRequestDispatcher("/views/miView.jsp").forward(request, response);
 
-		/*
+
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
 		// send HTML page to client
 		out.println("<html>");
-		out.println("<head><title>Ejemplo HTML desde Servlet</title></head>");
+		out.println("<head><title>Formulario</title></head>");
 		out.println("<body>");
-		out.println("<h1>Ejemplo Servlet</h1>");
-		out.println("<p>Este es un ejemplo en el curso de Java para generar HTML desde un Servlet.</p>");
-		out.println("<p><a href=\"/myServlet2\">Vamos al otro Servlet</a></p>");
-		out.println("</body></html>");
+		out.println("<h1>Introduzca su nombre</h1>");
+		out.println("<form action=\"myServlet2\" method=\"post\">");
+		out.println("<input type=\"text\" name=\"nombreForm\" placeholder=\"Nombre\" required>");
+		out.println("<input type=\"submit\" value=\"Enviar\">");
+		out.println("</form>");
+		out.println("</body>");
+		out.println("</html>");
 
-		 */
+
 	}
 
 }

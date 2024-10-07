@@ -11,27 +11,34 @@ import java.io.PrintWriter;
 @WebServlet(urlPatterns = "/myServlet2")
 public class MyServlet2 extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request,
+	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 
-		//String name = request.getParameter("nombreForm");
-
+		/*
 		request.setAttribute("nombreForm", request.getParameter("nombreForm"));
 
 		request.getRequestDispatcher("/views/welcome.jsp").forward(request, response);
+		*/
 
-		/*
+		String name = request.getParameter("nombreForm");
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 
 		// send HTML page to client
 		out.println("<html>");
-		out.println("<head><title>Ejemplo HTML desde Servlet</title></head>");
+		out.println("<head><title>Bienvenido</title></head>");
 		out.println("<body>");
-		out.println("<h1>Bienvenido!!</h1>");
+		if (name != null && !name.trim().isEmpty()) {
+			out.println("<h1>Bienvenid@, " + name + "!</h1>");
+		} else {
+			out.println("<h1>Bienvenid@, invitado!</h1>");
+		}
+		out.println("<a href=\"myServlet\">Volver al formulario</a>");
+		out.println("</body>");
+		out.println("</html>");
 
-		 */
+
 	}
 
 }
